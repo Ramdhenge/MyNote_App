@@ -1,13 +1,210 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background: linear-gradient(90deg, rgba(25,25,25,1) 14%, rgba(17,60,10,1) 50%, rgba(28,28,28,1) 85%); */
+  /* background: radial-gradient(circle, rgba(79,79,79,1) 0%, rgba(43,43,43,1) 53%); */
+  background: linear-gradient(241deg, rgba(38, 61, 134, 1) 0%, rgba(48, 48, 48, 1) 36%, rgba(37, 37, 37, 1) 63%, rgba(130, 27, 27, 1) 100%);
+  background-attachment: fixed;
+  overflow: hidden;
+  top: 0;
+}
+
+.header {
+  height: 16vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: rgb(80, 80, 80);
+  /* border: 1px solid red; */
+  box-shadow: 0px 0px 10px rgb(19, 19, 19);
+}
+
+.box {
+  margin: 3% 0%;
+  padding: 5% 14%;
+  border: 1px solid rgba(255, 255, 255, 0.637);
+  background: rgba(255, 255, 255, 0.452);
+  clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 70%, 100% 82%, 50% 100%, 0 82%, 0% 70%, 0% 35%, 0 0);
+}
+
+.header h2 {
+  margin: 2% 0%;
+  filter: drop-shadow(.10rem .9rem .4rem rgba(0, 0, 0, 0.829));
+  font-size: 2rem;
+}
+
+.container {
+  margin-top: 16vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid red; */
+  position: fixed;
+  overflow-y: scroll; 
+  overflow-x: hidden;
+  inset: 0;
+}
+
+.container::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+.container::-webkit-scrollbar-track {
+  background: transparent;        /* color of the tracking area */
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: transparent;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 1px solid gray;  /* creates padding around scroll thumb */
+}
+
+.note-container {
+  margin: 3% 0%;
+  /* border: 1px solid gray; */
+  width: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.note-container p{
+  margin-bottom: 2%;
+  font-size: .8rem;
+  width: 68vh;
+  text-align: left;
+  /* border: 1px solid red; */
+  color: rgba(255, 255, 255, 0.562);
+}
+
+.note-container #note-text {
+  width: 70vh;
+  padding: 4% 4%;
+  height: 20vh;
+  outline: none;
+  border: 1px solid rgb(117, 117, 117);
+  background: transparent;
+  border-radius: 2vh;
+}
+
+button {
+  cursor: pointer;
+}
+
+.buttons{
+  /* border: 1px solid red; */
+  width: 68vh;
+  display: flex;
+  justify-content:space-between;
+}
+
+.note-container button {
+  padding: 1vh 1.5vh;
+  border-radius: 3vh;
+  width: 20%;
+  border: none;
+  transition-duration: .3s;
+}
+
+.add{
+  background: rgba(14, 189, 29, 0.575);
+}
+.deleteAll{
+  background: rgba(241, 23, 23, 0.575);
+}
+
+.note-container .add:hover {
+  background: rgb(21, 160, 33);
+}
+.note-container .deleteAll:hover {
+  background: rgb(218, 20, 20);
+}
+
+.added-notes {
+  /* border: 1px solid red; */
+  margin: 3vh 0vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.my-note {
+  /* border: 1px solid green; */
+  margin: 2vh 0vh;
+  padding: 2vh 4vh;
+  width: 80vh;
+  display: flex;
+  border-radius: 3vh;
+  box-shadow: 0px 10px 15px rgb(5, 5, 5);
+  /* align-items: center; */
+}
+
+.my-note p {
+  /* border: 1px solid red; */
+  margin-right: 2%;
+  margin-top: 2%;
+  width: 93%;
+  font-size: 2.3vh;
+  text-align: justify;
+}
+
+.my-note button {
+  margin-left: 3%;
+  padding: 0vh 1vh;
+  height: 4vh;
+  border-radius: 100%;
+  border: none;
+  font-size: 3vh;
+  background: rgb(255, 0, 0);
+}
+
+
+/* ----------------------Media Query------------------------- */
+
+
+@media (max-width:900px) {
+
+  .header{
+    height: 12vh;
+  }
+
+  .container{
+    margin-top: 12vh;
+  }
+
+  .note-container #note-text{
+    width: 60%;
+  }
+
+  .note-container p{
+    width: 55%;
+  }
+
+  .buttons{
+    width: 60%;
+  }
+
+  .buttons button{
+    width: 12vh;
+  }
+
+  .added-notes{
+    /* border: 1px solid green; */
+    width: 95%;
+  }
+  .my-note{
+    width: 100%;
+  }
 }
