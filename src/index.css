@@ -11,8 +11,6 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background: linear-gradient(90deg, rgba(25,25,25,1) 14%, rgba(17,60,10,1) 50%, rgba(28,28,28,1) 85%); */
-  /* background: radial-gradient(circle, rgba(79,79,79,1) 0%, rgba(43,43,43,1) 53%); */
   background: linear-gradient(241deg, rgba(38, 61, 134, 1) 0%, rgba(48, 48, 48, 1) 36%, rgba(37, 37, 37, 1) 63%, rgba(130, 27, 27, 1) 100%);
   background-attachment: fixed;
   overflow: hidden;
@@ -41,7 +39,7 @@ body {
 
 .header h2 {
   margin: 2% 0%;
-  filter: drop-shadow(.10rem .9rem .4rem rgba(0, 0, 0, 0.829));
+  filter: drop-shadow(.10rem .9rem .4rem rgba(0, 0, 0, 0.24));
   font-size: 2rem;
 }
 
@@ -134,27 +132,29 @@ button {
 
 .added-notes {
   /* border: 1px solid red; */
-  margin: 3vh 0vh;
+  margin: .2vh 0vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .my-note {
-  /* border: 1px solid green; */
+  /* border: 1px solid rgba(255, 255, 255, 0.466); */
+  background: rgba(3, 3, 3, 0.39);
   margin: 2vh 0vh;
   padding: 2vh 4vh;
   width: 80vh;
   display: flex;
-  border-radius: 3vh;
-  box-shadow: 0px 10px 15px rgb(5, 5, 5);
+  border-radius: 1vh;
+  
+  /* box-shadow: 0px 10px 15px rgb(5, 5, 5); */
   /* align-items: center; */
 }
 
 .my-note p {
   /* border: 1px solid red; */
   margin-right: 2%;
-  margin-top: 2%;
+  /* margin-top: 2%; */
   width: 93%;
   font-size: 2.3vh;
   text-align: justify;
